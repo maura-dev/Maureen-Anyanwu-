@@ -18,7 +18,6 @@ function Home() {
 		
 		return(
 			<main>
-				<a id="home">
 				<div className="hero">
 
 					<div className="hero-links">
@@ -46,9 +45,6 @@ function Home() {
 					</div>
 					
 				</div>
-				</a>
-
-			
 			</main>
 		)
 }
