@@ -79,7 +79,7 @@ p{
   width:5%;
   display: flex;
   flex-direction: column;
-  position:absolute;
+  position:fixed;
   left:0;
 }
 
@@ -243,8 +243,6 @@ p{
     border: none;
   }
 }
-
-
 /* The typewriter cursor effect */
 @keyframes blink {
   50% {
@@ -256,3 +254,132 @@ p{
     border-color: tranparent;
   }
 }
+
+@media all and (max-width: 1005px) {
+  .hero-text {
+    padding: 50px 20px 0px 5%;
+  }
+
+  .hero-img{
+    width:40%;
+  }
+
+  .down-bg{
+    padding: 100px 0px 0px 0px;
+  }
+}
+
+
+@media all and (max-width: 845px) {
+  .hero {
+    padding: 50px 20px 0px 50px;
+  }
+
+  .hero-text{
+    width:70%;
+  }
+
+  .hero-img {
+    margin-top: 25vh;
+    width: 35%;
+    height: 60%;
+  }
+
+}
+
+@media all and (max-width: 730px) {
+  .hero {
+    flex-direction: column-reverse;
+    height: auto;
+  }
+
+  .hero-text {
+    width: 90%;
+    margin: auto;
+}
+
+.hero-links {
+  margin-top:0px;
+  top: 32vh;
+}
+
+.hero-img {
+  display: none;
+}
+
+.top-bg {
+  padding: 30px 20px 0px 20px;
+}
+}
+
+@media all and (max-width: 575px) {
+  .overlay, .overlay2 {
+    height: 70px;
+    font-size: 30px;
+}
+
+.overlay{
+  top: 49vh;
+}
+
+.top-bg p {
+  font-size: 20px;
+}
+
+.top-bg {
+  height:55vh;
+}
+
+.title {
+  padding: 10px;
+  font-size: 14px;
+}
+}
+
+@media all and (max-width: 475px) {
+  .title {
+    padding: 15px;
+    font-size: 16px;
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+
+  .hero-text{
+    width:100%;
+    padding: 20px 20px 0px 5%;
+  }
+
+  .typewriter1,
+  .typewriter2{
+    font-size: 22px;
+  }
+
+  .typewriter2{
+    white-space: normal;
+    line-height: 36px;
+  }
+
+  .overlay, .overlay2 {
+      height: 60px;
+      font-size: 20px;
+  }
+
+.overlay{
+  top: 50vh;
+}
+
+.overlay2 {
+  top: 18vh;
+}
+
+.link {
+  padding: 5px;
+}
+
+.down-bg {
+  padding: 70px 0px 0px 0px;
+}
+
+}
+  

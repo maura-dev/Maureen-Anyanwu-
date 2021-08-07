@@ -5,6 +5,9 @@ import { Button } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    [theme.breakpoints.between('xs','sm')]: {
+      padding:"0px 50px 0px 50px",
+    },
     '& > *': {
       margin: theme.spacing(1),
       width: '100%',

@@ -7,15 +7,21 @@ import { ThemeProvider } from '@material-ui/core';
 import { createMuiTheme } from '@material-ui/core';
 
 const theme = createMuiTheme({
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 960,
+      lg: 1280,
+      xl: 1920,
+    },
+  },
   palette: {
     primary: {
       main: "#3c096c",
     },
     secondary: {
       main: "#0b090a",
-    },
-    github: {
-      main: "#333",
     },
   },
 });

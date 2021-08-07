@@ -14,6 +14,7 @@ import Home from '../pages/home';
 import Projects from '../pages/projects';
 import Blog from '../pages/blog';
 import Contact from '../pages/contact';
+import { LaptopWindows } from '@material-ui/icons';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -56,28 +57,35 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const StyledLogo= withStyles({
+const StyledLogo= withStyles((theme)=>({
 		root:{
 			fontFamily:' "Dancing Script", "cursive" ',
 			fontSize:"50px",
 			color:"var(--button-color)",
 			position:"absolute",
-			right:"20px"
+			right:"20px",
+      [theme.breakpoints.down('xs')]: {
+        display:"none",
+       },
 		}
-})(Typography)
+}))(Typography)
 
-const STab= withStyles({
+const tabStyles= makeStyles ((theme) => ({
 	root:{
 		color:"var(--text-color)",
-		transition:"0.8s ease-in-out"
-	}
-})(Tab)
+		transition:"0.8s ease-in-out",
+    [theme.breakpoints.between('sm','md')]: {
+      minWidth:"100px",
+    },
+    
+  }
+}));
 
 
 export default function ScrollableTabsButtonPrevent() {
 	const classes = useStyles();
 	const [value, setValue] = React.useState(0);
-
+  const Stab= tabStyles();
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -90,17 +98,17 @@ export default function ScrollableTabsButtonPrevent() {
         <Tabs
           value={value}
           onChange={handleChange}
-          variant="scrollable"
+          variant={(window.outerWidth > 600) ? "scrollable": "fullWidth"}
           scrollButtons="off"
           indicatorColor="primary"
           textColor="primary"
           aria-label="scrollable prevent tabs example"
         >
-          <STab label="Profile" icon={<PersonRoundedIcon />} {...a11yProps(0)} />
-          <STab label="Projects" icon={<FolderSpecialRoundedIcon />} {...a11yProps(1)} />
-          <STab label="Blog" icon={<AssignmentRoundedIcon />} {...a11yProps(2)} />
-          <STab label="Contact" icon={<ContactPhoneRoundedIcon />} {...a11yProps(3)} />
-		  <StyledLogo variant="h5">Maureen</StyledLogo>
+          <Tab className={Stab.root} label="Profile" icon={<PersonRoundedIcon />} {...a11yProps(0)} />
+          <Tab className={Stab.root} label="Projects" icon={<FolderSpecialRoundedIcon />} {...a11yProps(1)} />
+          <Tab className={Stab.root} label="Blog" icon={<AssignmentRoundedIcon />} {...a11yProps(2)} />
+          <Tab className={Stab.root} label="Contact" icon={<ContactPhoneRoundedIcon />} {...a11yProps(3)} />
+		      <StyledLogo variant="h5">Maureen</StyledLogo>
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>

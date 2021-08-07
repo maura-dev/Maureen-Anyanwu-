@@ -15,7 +15,8 @@ import { Button } from '@material-ui/core';
 
 const StyledImg= withStyles({
 		root:{
-			height:"50%"
+			height:"50%",
+			objectFit:"contain"
 		}
 })(CardMedia)
 
@@ -28,15 +29,18 @@ const SCard= withStyles({
 		}
 })(Card)
 
-const PCard= withStyles({
+const projectStyles= makeStyles((theme)=> ({
 		root:{
-			width:"40%",
+			maxWidth: 350,
 			height:"auto",
-			marginBottom: "20px",
+			margin: "20px",
 			backgroundColor:"var(--primary-color)",
-			color:"var(--text-color)"
+			color:"var(--text-color)",
+			[theme.breakpoints.down('xs')]: {
+				maxWidth:"80%",
+			  },
 		}
-})(Card)
+}))
 
 const IconButtonStyle= withStyles({
 		root:{
@@ -44,23 +48,13 @@ const IconButtonStyle= withStyles({
 		}
 })(IconButton)
 
-export function SkillsCard({text,source }){
-	return(
-		<SCard>
-			<CardActionArea>
-				<StyledImg component="img" image={source} alt="skills"/>
-				<Typography variant="h6" component="p" align="center">{text}</Typography>
-			</CardActionArea>
-		</SCard>
-	)
-}
-
 export function ProjectCard({text,title,source, GUrl, WUrl }){
+	const PCard = projectStyles();
 	return(
-		<PCard>
+		<Card className={PCard.root}>
 		<br/>
 			<CardActionArea>
-				<CardMedia component="img" alt="maureen's projects" height="250px" image={source} />
+				<StyledImg component="img" alt="maureen's projects" height="250px" image={source} />
 				<CardContent>
 					<Typography gutterBottom variant="h5"component="h2">{title}</Typography>
 					<Typography variant="body2" component="p">{text}</Typography>
@@ -74,19 +68,22 @@ export function ProjectCard({text,title,source, GUrl, WUrl }){
 					<LanguageIcon />
 				</IconButtonStyle></Link>
 			</CardActions>
-		</PCard>
+		</Card>
 	)
 }
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme)=>({
   root: {
-    maxWidth: 345,
+    maxWidth: 350,
 	margin:"20px",
+	[theme.breakpoints.down('xs')]: {
+		maxWidth:"80%",
+	  },
   },
   media: {
     height: 140,
   },
-});
+}));
 
 export function BlogCard({image,title,date, children,link}) {
   const classes = useStyles();

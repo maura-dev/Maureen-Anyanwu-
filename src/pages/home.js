@@ -31,7 +31,7 @@ function Home() {
 						<h2 className="typewriter1">Hi there &#x1F44B;,</h2>
 						<h2 className="typewriter2">I am Maureen Anyanwu</h2>
 						<h2><span className="title">Frontend Developer</span>&nbsp;&nbsp;<span className="title">Technical Writer</span></h2><br/>
-						<p style={{fontSize:"16px", fontWeight:"550"}}>
+						<p style={{fontSize:"16px",marginTop: "-10px", fontWeight:"550"}}>
 							Driven by the zeal to understand how the web works, I delved into 
 							frontend developement where I get to work with various frontend 
 							technologies in order to create and improve websites. 

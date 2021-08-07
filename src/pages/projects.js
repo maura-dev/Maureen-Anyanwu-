@@ -19,8 +19,11 @@ const useStyles = makeStyles((theme) => ({
 		borderRadius:"4px",
 		color:"var(--button-color)",
 		fontWeight:"500",
-		boxShadow: "5px 5px 8px #949494,-5px -5px 8px #fffffe"
-	  },
+		boxShadow: "5px 5px 8px #949494,-5px -5px 8px #fffffe",
+		[theme.breakpoints.down('xs')]: {
+			margin: theme.spacing(0.8),
+		  },
+	},
 	},
   }));
 
@@ -45,7 +48,6 @@ function Projects() {
 						<Chip label="Material UI" onClick={handleClick} />
 						<Chip label="Git" onClick={handleClick} />
 						<Chip label="Github" onClick={handleClick} />
-						<Chip label="Bitbucket" onClick={handleClick} />
 						<Chip label="Bootstrap" onClick={handleClick} />
 					</div>
 				</div>
