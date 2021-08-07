@@ -14,7 +14,7 @@ import Home from '../pages/home';
 import Projects from '../pages/projects';
 import Blog from '../pages/blog';
 import Contact from '../pages/contact';
-import { LaptopWindows } from '@material-ui/icons';
+//import { LaptopWindows } from '@material-ui/icons';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;

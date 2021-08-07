@@ -20,15 +20,6 @@ const StyledImg= withStyles({
 		}
 })(CardMedia)
 
-const SCard= withStyles({
-		root:{
-			width:"20%",
-			height:"auto",
-			marginBottom: "20px",
-			marginRight:"30px"
-		}
-})(Card)
-
 const projectStyles= makeStyles((theme)=> ({
 		root:{
 			maxWidth: 350,
