@@ -12,6 +12,7 @@ import IconButton from '@material-ui/core/IconButton';
 import LanguageIcon from '@material-ui/icons/Language';
 import GitHubIcon  from '@material-ui/icons/GitHub';
 import { Button } from '@material-ui/core';
+import { Visibility } from '@material-ui/icons';
 
 const StyledImg= withStyles({
 		root:{
@@ -24,7 +25,7 @@ const projectStyles= makeStyles((theme)=> ({
 		root:{
 			maxWidth: 350,
 			height:"auto",
-			margin: "20px",
+			margin: "20px auto 20px auto",
 			backgroundColor:"var(--primary-color)",
 			color:"var(--text-color)",
 			[theme.breakpoints.down('xs')]: {
@@ -66,7 +67,9 @@ export function ProjectCard({text,title,source, GUrl, WUrl }){
 const useStyles = makeStyles((theme)=>({
   root: {
     maxWidth: 350,
-	margin:"20px",
+	margin: "20px auto 20px auto",
+	backgroundColor:"var(--primary-color)",
+	color:"var(--text-color)",
 	[theme.breakpoints.down('xs')]: {
 		maxWidth:"80%",
 	  },
@@ -96,9 +99,9 @@ export function BlogCard({image,title,date, children,link}) {
       </CardActionArea>
       <CardActions>
         <Button size="small" color="primary" href={link}>
-          Read more
+          Read more &nbsp;<Visibility/>
         </Button>
-		<Button disabled size="small" color="primary">
+		<Button  size="small" color="secondary">
           {date}
         </Button>
       </CardActions>

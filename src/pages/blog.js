@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import '../App.css';
-import { BlogCard } from '../components/skillsCard';
+import { BlogCard } from '../components/cards';
 import { Typography } from '@material-ui/core';
 import moment from 'moment';
+import Zoom from 'react-reveal/Zoom';
 
 class Blog extends Component {
 	state={
@@ -17,7 +18,6 @@ class Blog extends Component {
 			.then(response => {
 				//console.log(response.items)
 				this.setState({posts:[...response.items] })
-				console.log(this.state)
 			})
 	}
 
@@ -34,20 +34,22 @@ class Blog extends Component {
 				<div className="overlay">My Blog</div>
 				<div className="down-bg">
 					{this.state.posts.map( post =>(
-						<BlogCard
+						<Zoom>
+							<BlogCard
 							title={post.title}
 							image={post.thumbnail}
-							date={moment(post.pubDate).format("dddd, MMMM Do YYYY")}
+							date={moment(post.pubDate).format("LL")}
 							link={post.link}
 						>
 							<Typography 
 								variant="body2" 
-								color="textSecondary" 
+								color="var(--text-color)" 
 								component="p"  
 								dangerouslySetInnerHTML={{ __html: post.description.substring(0,195) }}>
 							
 							</Typography>
 						</BlogCard>
+						</Zoom>
 					))}
 				</div>
 				

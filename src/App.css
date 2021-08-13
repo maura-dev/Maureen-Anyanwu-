@@ -1,23 +1,23 @@
 /***********************************************/
 /**************######LIGHT MODE######************/
 /***********************************************/
- :root {
+ /* :root {
     --primary-color: #ffffff;
     --secondary-color: #f5f3f4;
     --text-color: #0b090a;
     --button-color: #3c096c;
-} 
+}  */
 
 /***********************************************/
 /**************######DARK MODE######************/
 /***********************************************/
 
-/* :root {
-    --primary-color: #0b090a;
-    --secondary-color:#161a1d;
-    --text-color: #ffffff;
-    --button-color: #ffb703;
-} */
+:root {
+    --primary-color: #343a40;
+    --secondary-color:#495057;
+    --text-color: #ced4da;
+    --button-color: #c29de6;
+} 
 
 *{
   box-sizing: border-box;
@@ -29,7 +29,7 @@ html,body{
 }
 
 body{
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+  font-family:"Raleway" ;
   background-color:var(--primary-color);
   color:var(--text-color);
   font-size: 20px;
@@ -53,6 +53,27 @@ p{
 .button:hover{
   color: var(--text-color);
 }
+
+.loader{
+  background-color: var(--primary-color);
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  font-family: "Dancing Script", "cursive";
+	font-size:50px;
+	color:var(--button-color);
+}
+
+.loader h1{
+  margin: 40vh auto auto auto;
+  -webkit-animation: swirl-in-fwd 2s ease-out infinite both;
+	animation: swirl-in-fwd 2s ease-out infinite both;
+}
+
+
+/***********************************************/
+/**************######HOME PAGE######************/
+/***********************************************/
 
 .side{
   padding:15px; 
@@ -99,13 +120,6 @@ p{
   border:2px solid var(--primary-color);
 }
 
-.project-page h3{
-  width:100vw;
-  text-align: center;
-  font-size:30px;
-  margin-bottom:50px;
-}
-
 .title{
   background-color: var(--button-color);
   padding:15px;
@@ -114,6 +128,48 @@ p{
   color: var(--primary-color);
 }
 
+.typewriter1 {
+  width:100%;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid var(--button-color); /* The typwriter cursor */
+  white-space: nowrap; /*Keeps the content on a single line */
+  -webkit-animation: type 2s steps(40, end);
+  animation: type 2s steps(40, end);
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  margin-bottom: 20px;
+}
+
+.typewriter2 {
+  width:100%;
+  letter-spacing: 4px;
+  overflow: hidden;
+  background: linear-gradient(90deg, #000, #fff, #000);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  animation: animate 3s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+  margin-bottom: 20px;
+}
+
+.hero-p{
+  margin-top: -10px;
+  font-weight:550;
+  -webkit-animation: tracking-in-expand-fwd 3s ease-in-out both;
+	        animation: tracking-in-expand-fwd 3s ease-in-out both;
+}
+
+/***********************************************/
+/*****######PROJECT AND BLOG PAGE######*********/
+/***********************************************/
+
+.project-page h3{
+  width:100vw;
+  text-align: center;
+  font-size:30px;
+  margin-bottom:50px;
+}
 .top-bg p{
   font-size: 25px;
   margin-top: 50px;
@@ -160,33 +216,52 @@ p{
   text-align: center;
 }
 
-.typewriter1 {
-  width:100%;
-  overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: .15em solid var(--button-color); /* The typwriter cursor */
-  white-space: nowrap; /*Keeps the content on a single line */
-  -webkit-animation: type 2s steps(40, end);
-  animation: type 2s steps(40, end);
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-  margin-bottom: 20px;
+/***********************************************/
+/***********######ANIMATIONS######************/
+/***********************************************/
+
+@-webkit-keyframes tracking-in-expand-fwd {
+  0% {
+    letter-spacing: -0.5em;
+    -webkit-transform: translateZ(-700px);
+            transform: translateZ(-700px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    opacity: 1;
+  }
+}
+@keyframes tracking-in-expand-fwd {
+  0% {
+    letter-spacing: -0.5em;
+    -webkit-transform: translateZ(-700px);
+            transform: translateZ(-700px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    opacity: 1;
+  }
 }
 
-.typewriter2 {
-  width:100%;
-  opacity: 0;
-  overflow: hidden; /*Ensures the content is not revealed until the animation */
-  border-right: .15em solid var(--button-color); /* The typwriter cursor */
-  white-space: nowrap; /* Keeps the content on a single line */
-  -webkit-animation: type2 2s steps(40, end);
-  animation: type2 2s steps(40, end);
-  -webkit-animation-delay: 2s;
-  animation-delay: 2s;
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-  margin-bottom: 20px;
-}
 
+@keyframes animate {
+  0% {
+    background-position: -500%;
+  }
+  100% {
+    background-position: 500%;
+  }
+}
 /* The typing effect */
 @keyframes type {
   0% {
@@ -212,37 +287,7 @@ p{
   }
 }
 
-@keyframes type2 {
-  0% {
-    width: 0;
-  }
-  1% {
-    opacity: 1;
-  }
-  99.9% {
-    border-right: .15em solid var(--button-color);
-  }
-  100% {
-    opacity: 1;
-    border: none;
-  }
-}
 
-@-webkit-keyframes type2 {
-  0% {
-    width: 0;
-  }
-  1% {
-    opacity: 1;
-  }
-  99.9% {
-    border-right: .15em solid var(--button-color);
-  }
-  100% {
-    opacity: 1;
-    border: none;
-  }
-}
 /* The typewriter cursor effect */
 @keyframes blink {
   50% {
@@ -254,6 +299,36 @@ p{
     border-color: tranparent;
   }
 }
+
+@-webkit-keyframes swirl-in-fwd {
+  0% {
+    -webkit-transform: rotate(-540deg) scale(0);
+            transform: rotate(-540deg) scale(0);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotate(0) scale(1);
+            transform: rotate(0) scale(1);
+    opacity: 1;
+  }
+}
+@keyframes swirl-in-fwd {
+  0% {
+    -webkit-transform: rotate(-540deg) scale(0);
+            transform: rotate(-540deg) scale(0);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotate(0) scale(1);
+            transform: rotate(0) scale(1);
+    opacity: 1;
+  }
+}
+
+
+/***********************************************/
+/***********######MEDIA QUERY######************/
+/***********************************************/
 
 @media all and (max-width: 1005px) {
   .hero-text {
@@ -304,7 +379,9 @@ p{
 }
 
 .hero-img {
-  display: none;
+  width: 50%;
+  height: 50vh;
+  margin: 50px auto 0px auto;
 }
 
 .top-bg {
@@ -313,6 +390,41 @@ p{
 }
 
 @media all and (max-width: 575px) {
+
+  .hero{
+    padding: 50px 0px 50px 0px;
+  }
+
+  .hero-p{
+    z-index: 1;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .hero h2{
+    text-align: center;
+  }
+  .hero-links{
+    margin-top: 60vh;
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    position:fixed;
+    bottom:0;
+    z-index: 2;
+  }
+
+  .side{
+    padding:15px; 
+    padding-left: 25px;
+    width:20vw;
+  }
+  
+  .side:hover{
+    width:20vw;
+    padding-left:0px;
+  }
+  
   .overlay, .overlay2 {
     height: 70px;
     font-size: 30px;
@@ -323,7 +435,7 @@ p{
 }
 
 .top-bg p {
-  font-size: 20px;
+  font-size: 16px;
 }
 
 .top-bg {
@@ -339,8 +451,7 @@ p{
 @media all and (max-width: 475px) {
   .title {
     padding: 15px;
-    font-size: 16px;
-    display: block;
+    font-size: 14px;
     margin: auto;
     text-align: center;
 }
@@ -379,6 +490,11 @@ p{
 
 .down-bg {
   padding: 70px 0px 0px 0px;
+}
+
+.hero-img {
+  width: 60%;
+  height: 250px;
 }
 
 }
